@@ -2,11 +2,10 @@
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut" href="./img/favicon.ico" />
-    <link rel="stylesheet" href="./css/reset.css" />
-    <link rel="stylesheet" href="./css/10000hours.css" />
+    <link rel="stylesheet" type="text/css" href="./css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="./css/10000hours.css" />
     <title>1만 시간의 법칙</title>
   </head>
   <body>
@@ -22,10 +21,33 @@
     하나의 문서에 고유한 id하나만 사용가능
 
     * class는 그룹으로 묶어서 스타일을 지정할 때 쓰는 이름 (표기방식:.이름)
-    id와 class의 이름은 자유롭게 지으면 되지만 숫자로 시작해서는 안된다.-->
+    id와 class의 이름은 자유롭게 지으면 되지만 숫자로 시작해서는 안된다.
+  
+    * id네이밍
+      여기에 사용된 id의 이름이 contants인것은 영역을 분류할 때 주로 쓰이며,
+      content는 본문영역을 의미한다.
+
+      그 외의 네이밍
+      - index : 첫페이지 / 홈페이지의 첫 페이지를 명칭
+      - wrap : 전체 영역 / 페이지를 감싸는 전체영역
+      - header : 머리글 영역
+      - footer : 바닥글 영역
+    -->
       <div class="wrapper">
         <div class="title">
+          <!--
+          네이밍 title
+          title은 일반적인 타이틀을 의미하며, tit로도 쓰인다.
+        -->
           <img src="./img/clock.png" alt="background_logo" class="clock_img" />
+          <!--
+            * src = 이미지 경로 지정 url
+            * alt = 이미지의 텍스트 설명
+
+            * img에 class를 부여하는 이유
+            여러개의 이미지에 동일한 속성을 일괄적으로 적용하여야 하는 경우
+            class를 사용하면 적용과 수정이 용이하다.
+          -->
           <div class="title_img">
             <img src="./img/title.png" alt="1만 시간의 법칙" />
           </div>
@@ -33,7 +55,9 @@
         <div class="intro">
           <div class="intro_saying">"연습은 어제의 당신보다 당신을 더 낫게 만든다."</div>
           <div class="explain">
+            <!--네이밍 explain = 설명하다-->
             <div class="quotes">
+              <!--네이밍 quotes = 인용부호 따옴표-->
               <img src="./img/quotes.png" alt="따옴표" />
             </div>
             <p><span>1만 시간의 법칙</span>은 <br />어떤 분야의 전문가가 되기 위해서는 <br />최소한 1만 시간의 훈련이 필요하다는 법칙이다.</p>
@@ -42,11 +66,15 @@
           </div>
         </div>
         <div class="inputs">
+          <!--네이밍 input = 폼 분류
+            radio, checkbox, file등의 input타입
+            inp으로도 사용된다.-->
           <div class="field">
             <p>나는</p>
             <input type="text" id="field_value" placeholder="예)프로그래밍" />
             <!--input은 입력창이 생성되는 것이다.
             input에는 여러 type이 있는데 text는 텍스트를 입력하는 창이 생성된다.
+
             placeholder를 입력하면 입력창 안에 흐린 글씨로 안내 문구를 작성할 수 있다.-->
             <p>전문가가 될 것이다.</p>
           </div>
@@ -86,8 +114,39 @@
       </div>
     </section>
 
-    <section id="model"></section>
-    <footer id="copyright"></footer>
-    <!--footer는 작성자, 저작권, 정보, 관련 문서 등의 내용을 담을 때 사용-->
-  </body>
+    <section id="modal">
+      <!-- id naming modal : 팝업 창-->
+      <div class="modal_wrap">
+        <div class="cheer">
+          <h1>화이팅!♥♥♥</h1>
+          <h2>당신의 꿈을 응원합니다!</h2>
+        </div>
+        <div class="licat_img">
+          <img src="./img/licat.png" alt="라이캣 응원" />
+        </div>
+        <buttton class="close_btn">종료하고 진짜 훈련하러 가기 GO!GO!</buttton>
+        <p>(그냥 닫기 버튼 입니다.)</p>
+      </div>
+    </section>
+    <footer id="copyright">
+      <!--footer는 작성자, 저작권, 정보, 관련 문서 등의 내용을 담을 때 사용
+        
+        id naming copyright : 특수기호(동그라미 안에 C가 그려진 기호 = 카피라이트 기호)-->
+      <div class="log_img">
+        <img src="./img/logo.png" alt="weniv" />
+      </div>
+      <p>※ 본 서비스 내 이미지 및 콘텐츠의 저작권은 주식회사 WeNiv에 있습니다. 수정 및 재배포, 무단 도용 시 법적인 문제가 발생할 수 있습니다.</p>
+    </footer>
+    <script type="text/javascript" src="js/10000hours.js"></script>
+    <!--script는 HTML문서에 자바스크립트 코드를 삽입할 수 있다.
+    script의 위치는 body의 가장 마지막에 작성하여야 문서 처리 속도가 빨라진다.
+
+    type
+    <script>와 <script type="text/javascript">는 동일한 문장이다.
+    text를 통해서 스크립트를 구현하겠다는 뜻이며,
+    웹표준은 type을 적어주는 것이 맞지만, HTML에서는 디폴트로 javascript를 지정해주기 때문에 안적어도 괜찮다.
+    하지만, 하위 호환성을 윟서는 적어주는 것이 좋다.
+
+    src=파일의 경로
+  --></body>
 </html>
